@@ -69,6 +69,7 @@
         mysqli_close($database);
     ?>
 </table>
+
 <?php print ("<p><a href='index.html'>Click here to go main page</a></p>"); ?>
 </body>
 </html>
