@@ -9,7 +9,7 @@ html, body { height: 100%;}
     margin-left: .5em;
     margin-bottom: .5em;
     float: left;
-    text-align: right;
+    text-align: left;
     width: 25%;
     
    
@@ -19,7 +19,7 @@ html, body { height: 100%;}
     text-align: justify;
     font-family: Verdana, geneva, sans-serif;
     margin: .5em;
-    float: left;
+    float: right;
 }
 
 header {
