@@ -77,27 +77,28 @@
         mysqli_close($database);
     ?>
 </table>
-    <form action="admin.php" method="post">
-        <div><label>Enter Id to delete:</label><input type="number" name="idrecord"></div>
-        <div><label>Delete:</label><input type="submit" value="Delete record" name="deleterecord"></div>
-    </form>
+
     <?php
-        $idRecord = $_POST["idrecord"] ?? "";
-        $query1 = "DELETE FROM reservations WHERE id =  '$idRecord';";
-        if (!($database = mysqli_connect("localhost:3306", "root", "i36297815M@"))) {
-            die("<p>Could not connect to database </p></body></html>");
-        }
+            print ("<form action=admin.php method=post>");
+            print ("<div><label>Enter Id to delete:</label><input type=number name=idrecord></div>");
+            print ("<div><label>Delete:</label><input type=submit value=Delete record name=deleterecord></div>");
+            print (" </form>");
+            $idRecord = $_POST["idrecord"] ?? "";
+            $query1 = "DELETE FROM reservations WHERE id =  '$idRecord';";
+            if (!($database = mysqli_connect("localhost:3306", "root", "i36297815M@"))) {
+                die("<p>Could not connect to database </p></body></html>");
+            }
     
-        // open products database
-        if (!mysqli_select_db($database, "examdb")) {
-            die("<p>Could not open examdb database </p></body></html>");
-        }
+            // open products database
+            if (!mysqli_select_db($database, "examdb")) {
+                die("<p>Could not open examdb database </p></body></html>");
+            }
     
-        // query products database
-        if (!($result = mysqli_query($database, $query1))) {
-            print ("<p>Could not execute query!</p></body></html>");
-            die(mysqli_error($database));
-        }
+            // query products database
+            if (!($result = mysqli_query($database, $query1))) {
+                print ("<p>Could not execute query!</p></body></html>");
+                die(mysqli_error($database));
+            }
     ?>
 <?php print ("<p><a href='index.html'>Click here to go main page</a></p>"); ?>
 </body>
