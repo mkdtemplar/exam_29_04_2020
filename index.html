@@ -23,8 +23,13 @@
             $("#execute").load("scheduleTestDrive.html")
         }
     </script>
-    <link rel="stylesheet" href="styles.css">
-
+    <script>
+        function adminPage()
+        {
+            $("#execute").empty();
+            $("#execute").load("admin.php")
+        }
+    </script>
 </head>
 <body>
 <header><img src="slika1.jpg" width="800" height="200"></header>
@@ -37,6 +42,7 @@
                 <li><a href="#" onclick="load_html()">Home</a> </li>
                 <li><a href="#" onclick="calculate()" >Calculate</a> </li>
                 <li><a href="#" onclick="readDB()">Schedule Test Drive</a></li>
+                <li><a href="#" onclick="adminPage()">Administrate</a></li>
             </ul>
         </nav>
     </div>

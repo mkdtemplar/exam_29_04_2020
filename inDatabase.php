@@ -7,13 +7,13 @@
     print ("<style> a:hover{ text-decoration: red underline; font-weight: bold; color: red; } </style>");
     print ("</head><body>");
    
-        $fname = $_POST["fname"] ?? "";
+        $f_name = $_POST["fname"] ?? "";
         $car = $_POST ["cars"] ?? "";
         $rdate = $_POST["rdate"] ?? "";
     
     
     $query = "INSERT INTO reservations  ( firstname, car, resdate )
-                VALUES ( '$fname', '$car', '$rdate' )";
+                VALUES ( '$f_name', '$car', '$rdate' )";
         
         if (!($database = mysqli_connect("localhost:3306", "root", "i36297815M@")))
         {
@@ -39,9 +39,11 @@
 <?php
     print ("<div>");
     print ("<p class='head'>The following information is saved in database</p>");
-    print ("<p>Name: $fname</p>");
+    print ("<p>Name: $f_name</p>");
     print ("<p>Car: $car</p>");
     print ("<p>Date: $rdate</p>");
+    print ("<p><a href='index.html'>Go to MAIN PAGE</a></p>");
+    print ("<p><a href='fromDatabase.php'>Click here to view entire database</a></p>");
     print ("</div>");
     print ("</body></html>");
 ?>

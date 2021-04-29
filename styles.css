@@ -67,7 +67,7 @@ input:hover {
     background-color: powderblue;
 }
 
-label, datalist, list {
+label, datalist, list, option {
     width: 8em;
     float: left;
 }
