@@ -30,6 +30,13 @@
             $("#execute").load("admin.php")
         }
     </script>
+    <script>
+        function deleteRecord()
+        {
+            $("#execute").empty();
+            $("#execute").load("deleteRecord.php")
+        }
+    </script>
 </head>
 <body>
 <header><img src="slika1.jpg" width="800" height="200"></header>
@@ -43,6 +50,7 @@
                 <li><a href="#" onclick="calculate()" >Calculate</a> </li>
                 <li><a href="#" onclick="readDB()">Schedule Test Drive</a></li>
                 <li><a href="#" onclick="adminPage()">Administrate</a></li>
+                <li><a href="#" onclick="deleteRecord()">Delete record</a> </li>
             </ul>
         </nav>
     </div>
