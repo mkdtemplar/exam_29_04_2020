@@ -77,8 +77,16 @@
         mysqli_close($database);
     ?>
 </table>
-
+</body>
+</html>
     <?php
+        print ("<!DOCTYPE html>");
+        print ("<html>");
+        print ("<head>");
+        print ("<meta charset='utf-8'>");
+        print ("<title>Fuel Calculations</title>");
+        print ("<style> a:hover{ text-decoration: red underline; font-weight: bold; color: red; } </style>");
+        print ("</head><body>");
             print ("<form action=admin.php method=post>");
             print ("<div><label>Enter Id to delete:</label><input type=number name=idrecord></div>");
             print ("<div><label>Delete:</label><input type=submit value=Delete record name=deleterecord></div>");
@@ -99,8 +107,8 @@
                 print ("<p>Could not execute query!</p></body></html>");
                 die(mysqli_error($database));
             }
+            print ("</body></html>");
     ?>
 <?php print ("<p><a href='index.html'>Click here to go main page</a></p>"); ?>
-</body>
-</html>
+
 

@@ -43,7 +43,7 @@
     print ("<p>Car: $car</p>");
     print ("<p>Date: $rdate</p>");
     print ("<p><a href='index.html'>Go to MAIN PAGE</a></p>");
-    print ("<p><a href='fromDatabase.php'>Click here to view entire database</a></p>");
+    print ("<p><a href='admin.php'>Click here to view entire database</a></p>");
     print ("</div>");
     print ("</body></html>");
 ?>
