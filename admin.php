@@ -41,6 +41,7 @@
 <body>
 <?php
     $query = "SELECT * FROM reservations";
+    
     if (!($database = mysqli_connect("localhost:3306", "root", "i36297815M@"))) {
         die("<p>Could not connect to database </p></body></html>");
     }
@@ -103,7 +104,7 @@
             }
     
             // query products database
-            if (!($result = mysqli_query($database, $query1))) {
+            if (!($result1 = mysqli_query($database, $query1))) {
                 print ("<p>Could not execute query!</p></body></html>");
                 die(mysqli_error($database));
             }
