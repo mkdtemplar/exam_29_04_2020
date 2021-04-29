@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Schedule test drive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <form action="inDatabase.php" method="post">
+        <div><label>Name:</label><input type="text" required id="fname"></div>
+        <div><p><label for = "carList">Select Car: <input type="text" id="carList" placeholder="Select car" list="cars"/>
+            <datalist id="cars">
+                <option value="Open Corsa"></option>
+                <option value="Seat Ibiza"></option>
+                <option value="Fiat Punto"></option>
+                <option value="Kia SportAge"></option>
+            </datalist> </label></p></div><br>
+        <div><p><label>Select date:</label> <input type="datetime-local" id="rdate"></p><br></div>
+        <div><label>Reserve test drive:</label> <input type="submit" value="RESERVE"></div>
+    </form>
+</body>
+</html>
