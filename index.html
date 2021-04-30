@@ -25,6 +25,12 @@
             $("#execute").empty();
             $("#execute").load("admin.php")
         }
+        
+        function deleteRecord()
+        {
+            $("#execute").empty();
+            $("#execute").load("deleteRecord.php")
+        }
     </script>
 </head>
 <body>
@@ -39,6 +45,7 @@
                 <li><a href="#" onclick="calculate()" >Calculate</a> </li>
                 <li><a href="#" onclick="readDB()">Schedule Test Drive</a></li>
                 <li><a href="#" onclick="adminPage()">Administrate</a></li>
+                <li><a href="#" onclick="deleteRecord()">Delete Record</a> </li>
             </ul>
         </nav>
     </div>

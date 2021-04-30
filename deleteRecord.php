@@ -37,9 +37,11 @@
             text-align: center;
             text-shadow: 5px 5px 10px red;
         }
+        a:hover{ text-decoration: red underline; font-weight: bold; color: red; }
     </style>
 </head>
 <body>
+
 <?php
     $query = "SELECT * FROM reservations";
     
@@ -49,7 +51,7 @@
     
     // open products database
     if (!mysqli_select_db($database, "examdb")) {
-        die("<p>Could not open products database </p></body></html>");
+        die("<p>Could not open examdb database </p></body></html>");
     }
     
     // query products database
@@ -57,31 +59,29 @@
         print ("<p>Could not execute query!</p></body></html>");
         die(mysqli_error($database));
     }
-?>
-<h1>Database content</h1>
-<table>
-    <caption>Information stored in database table  reservations</caption>
-    <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Car</th>
-        <th>Reservation date</th>
-        
-    </tr>
-    <?php
-        for ($i = 0; $row = mysqli_fetch_row($result); $i++)
-        {
-            print ("<tr>");
-            foreach ($row as $key => $value)
-                print ("<td>$value</td>");
-            print ("</tr>");
-        }
-        mysqli_close($database);
+    print ("<h1>Database content</h1><table><caption>Information stored in database table  reservations</caption>");
+    print ("<tr><th>ID</th> <th>First Name</th> <th>Car</th><th>Reservation date</th></tr>");
+    for ($i = 0; $row = mysqli_fetch_row($result); $i++)
+    {
+        print ("<tr>");
+        foreach ($row as $key => $value)
+            print ("<td>$value</td>");
+        print ("</tr>");
+    }
+    
+    print ("<form action=deleteRecord.php method=post>");
+    print ("<div><label>Enter Id to delete:</label><input type=number name=idrecord></div>");
+    print ("<div><label>Go to Delete record page:</label><input type=submit value=Delete record name=deleterecord></div>");
+    print (" </form>");
+    $idRecord = $_POST["idrecord"] ?? "";
+    $query1 = "DELETE FROM reservations WHERE id =  '$idRecord';";
+    if (!($result1 = mysqli_query($database, $query1))) {
+        print ("<p>Could not execute query!</p></body></html>");
+        die(mysqli_error($database));
+    }
+    
+    print ("<p><a href='index.html'>Click here to go main page</a></p>");
+    print ("<p><a href='admin.php'>Click here to view entire database</a></p>");
+    print ("</body></html>");
+    mysqli_close($database);
     ?>
-</table>
-
-</body>
-</html>
-<?php print ("<p><a href='index.html'>Click here to go main page</a></p>"); ?>
-
-
