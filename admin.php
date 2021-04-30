@@ -89,7 +89,7 @@
     print ("</head><body>");
     print ("<form action=admin.php method=post>");
     print ("<div><label>Enter Id to delete:</label><input type=number name=idrecord></div>");
-    print ("<div><label>Delete:</label><input type=submit value=Delete record name=deleterecord></div>");
+    print ("<div><label>Go to Delete record page:</label><input type=submit value=Delete record name=deleterecord></div>");
     print (" </form>");
     $idRecord = $_POST["idrecord"] ?? "";
     $query1 = "DELETE FROM reservations WHERE id =  '$idRecord';";
