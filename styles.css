@@ -1,27 +1,5 @@
 html, body { height: 100%;}
 
-.floatedHmePage
-{
-    font-size: 1.5em;
-    font-family: arial, helvetica, sans-serif;
-    padding: .2em;
-    margin-left: .5em;
-    margin-bottom: .5em;
-    float: right;
-    text-align: right;
-    width: 25%;
-    
-   
-}
-.pHomePage
-{
-    text-align: justify;
-    font-family: Verdana, geneva, sans-serif;
-    padding: .2em;
-    margin-left: .5em;
-    margin-bottom: .5em;
-}
-
 header {
     background-color: skyblue;
     text-align: center;
