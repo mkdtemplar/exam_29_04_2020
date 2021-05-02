@@ -28,14 +28,18 @@
         
         function deleteRecord()
         {
-            $("#execute").empty();
-            $("#execute").load("deleteRecord.php")
+            
+            $("#loadadmin").load("admin.php")
+            $("#loadDelete").load("deleteRecord.html");
         }
     </script>
 </head>
 <body>
 <header><img src="slika1.jpg" width="800" height="200"></header>
-<div class="floated left" id = "execute"></div>
+<div class="floated left" id = "execute">
+    <div id="loadadmin"></div>
+    <div id="loadDelete"></div>
+</div>
 
 <div class="floated right" >
     <div>

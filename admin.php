@@ -79,7 +79,6 @@
         mysqli_close($database);
     ?>
 </table>
-
 </body>
 </html>
 <?php print ("<p><a href='index.html'>Click here to go main page</a></p>"); ?>

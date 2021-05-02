@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset = "utf-8">
-    <meta http-equiv = "refresh" content = "120"/>
     <title>Search results</title>
     <style>
         div {
@@ -43,43 +42,30 @@
 <body>
 
 <?php
-    $query = "SELECT * FROM reservations";
     
-    if (!($database = mysqli_connect("localhost:3306", "root", "i36297815M@"))) {
+    $idRecord = $_POST["idrecord"] ?? "";
+    $query = "DELETE FROM reservations WHERE id =  '$idRecord';";
+    
+    if (!($database = mysqli_connect("localhost:3306", "root", "i36297815M@")))
+    {
         die("<p>Could not connect to database </p></body></html>");
     }
     
-    // open products database
-    if (!mysqli_select_db($database, "examdb")) {
-        die("<p>Could not open examdb database </p></body></html>");
+    if (!mysqli_select_db($database, "examdb"))
+    {
+        die("<p>Could not open products database </p></body></html>");
     }
     
     // query products database
-    if (!($result = mysqli_query($database, $query))) {
-        print ("<p>Could not execute query!</p></body></html>");
-        die(mysqli_error($database));
-    }
-    print ("<h1>Database content</h1><table><caption>Information stored in database table  reservations</caption>");
-    print ("<tr><th>ID</th> <th>First Name</th> <th>Car</th><th>Reservation date</th></tr>");
-    for ($i = 0; $row = mysqli_fetch_row($result); $i++)
+    if (!($result = mysqli_query($database, $query)))
     {
-        print ("<tr>");
-        foreach ($row as $key => $value)
-            print ("<td>$value</td>");
-        print ("</tr>");
-    }
-    
-    print ("<form action=deleteRecord.php method=post>");
-    print ("<div><label>Enter Id to delete:</label><input type=number name=idrecord></div>");
-    print ("<div><label>Go to Delete record page:</label><input type=submit value=Delete record name=deleterecord></div>");
-    print (" </form>");
-    $idRecord = $_POST["idrecord"] ?? "";
-    $query1 = "DELETE FROM reservations WHERE id =  '$idRecord';";
-    if (!($result1 = mysqli_query($database, $query1))) {
         print ("<p>Could not execute query!</p></body></html>");
         die(mysqli_error($database));
     }
-    
+    else
+    {
+        print ("<p>Query executed successfully record with id: " . $idRecord . " was deleted from database</p>" );
+    }
     print ("<p><a href='index.html'>Click here to go main page</a></p>");
     print ("<p><a href='admin.php'>Click here to view entire database</a></p>");
     print ("</body></html>");
