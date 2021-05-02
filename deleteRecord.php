@@ -67,7 +67,7 @@
         print ("<p>Query executed successfully record with id: " . $idRecord . " was deleted from database</p>" );
     }
     print ("<p><a href='index.html'>Click here to go main page</a></p>");
-    print ("<p><a href='admin.php'>Click here to view entire database</a></p>");
+    print ("<p><a href='readDatabase.php'>Click here to view entire database</a></p>");
     print ("</body></html>");
     mysqli_close($database);
     ?>

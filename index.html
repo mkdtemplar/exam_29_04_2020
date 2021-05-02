@@ -7,29 +7,43 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         function calculate(){
-            $("#execute").empty();
-            $("#execute").load("calculations.html")
+            $("#homepage").empty();
+            $("#readdatabase").empty();
+            $("#loadDelete").empty();
+            $("#writeInDB").empty();
+            $("#calculate").load("calculations.html")
         }
    
-        function load_html() {
-            $("#execute").empty();
-            $("#execute").load("HomePage.html");
+        function load_HomePage() {
+            $("#readdatabase").empty();
+            $("#loadDelete").empty();
+            $("#writeInDB").empty();
+            $("#calculate").empty();
+            $("#homepage").load("HomePage.html");
         }
         
-        function readDB() {
-            $(`#execute`).empty();
-            $("#execute").load("scheduleTestDrive.html")
+        function writeInDB() {
+            $(`#readdatabase`).empty();
+            $(`#loadDelete`).empty();
+            $(`#homepage`).empty();
+            $("#calculate").empty();
+            $("#writeInDB").load("scheduleTestDrive.html")
         }
         
-        function adminPage() {
-            $("#execute").empty();
-            $("#execute").load("admin.php")
+        function readDatabase() {
+            $(`#loadDelete`).empty();
+            $("#calculate").empty();
+            $("#writeInDB").empty();
+            $("#homepage").empty();
+            $("#readdatabase").load("readDatabase.php")
         }
         
         function deleteRecord()
         {
-            
-            $("#loadadmin").load("admin.php")
+            $("#homepage").empty();
+            $("#adminpage").empty();
+            $("#calculate").empty();
+            $("#readdatabase").load("readDatabase.php")
             $("#loadDelete").load("deleteRecord.html");
         }
     </script>
@@ -37,18 +51,23 @@
 <body>
 <header><img src="slika1.jpg" width="800" height="200"></header>
 <div class="floated left" id = "execute">
-    <div id="loadadmin"></div>
+    <div id="readdatabase"></div>
     <div id="loadDelete"></div>
+    <div id="calculate"></div>
+    <div id="writeInDB"></div>
+    <div id="homepage"></div>
+    
 </div>
+
 
 <div class="floated right" >
     <div>
         <nav>Menu
             <ul>
-                <li><a href="#" onclick="load_html()">Home</a> </li>
+                <li><a href="#" onclick="load_HomePage()">Home</a> </li>
                 <li><a href="#" onclick="calculate()" >Calculate</a> </li>
-                <li><a href="#" onclick="readDB()">Schedule Test Drive</a></li>
-                <li><a href="#" onclick="adminPage()">Administrate</a></li>
+                <li><a href="#" onclick="writeInDB()">Schedule Test Drive</a></li>
+                <li><a href="#" onclick="readDatabase()">Read Database</a></li>
                 <li><a href="#" onclick="deleteRecord()">Delete Record</a> </li>
             </ul>
         </nav>
